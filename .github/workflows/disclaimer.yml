@@ -1,8 +1,20 @@
-steps:
-  - uses: actions/checkout@v3
-  - name: Disclaim Articles Academia.edu
-    uses: tj-actions/puppeteer@v5
-    id: puppeteer
-    with:
-      files: |
-        actions.js
+name: "Disclaim academia.edu articles"
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  ubuntu:
+    name: Puppeteer
+    runs-on: ubuntu-latest
+    steps:
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Disclaim Articles Academia.edu
+        uses: tj-actions/puppeteer@v5
+        id: puppeteer
+        with:
+          files: |
+            actions.js
