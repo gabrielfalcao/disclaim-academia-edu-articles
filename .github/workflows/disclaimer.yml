@@ -9,7 +9,13 @@ jobs:
     name: Puppeteer
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: 'npm'
+      - run: npm install
       - name: Disclaim Articles Academia.edu
         uses: tj-actions/puppeteer@v5
         id: puppeteer
