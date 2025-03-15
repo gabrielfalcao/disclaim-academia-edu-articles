@@ -23,4 +23,4 @@ jobs:
           name: puppeteer-chrome
           options: '-i --init --cap-add=SYS_ADMIN -v ${{ github.workspace }}:${{ github.workspace }}'
           args: |
-            bash -c 'npm install && node actions.js'
+            bash -c 'export PATH=$PATH:node_modules/.bin; npm install -g npm@latest; cp -vf ${{ github.workspace }}/{package.json,actions.js} /home/pptruser; npm install; node actions.js'
