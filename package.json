@@ -15,8 +15,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "build": "tsc actions.ts",
-    "act": "ts-node actions.ts"
+    "act": "ts-node actions.js"
   },
   "dependencies": {
     "hash.js": "^1.1.7",
