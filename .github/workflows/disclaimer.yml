@@ -16,9 +16,4 @@ jobs:
           node-version: 22.x
           cache: 'npm'
       - run: npm install
-      - name: Disclaim Articles Academia.edu
-        uses: tj-actions/puppeteer@v5
-        id: puppeteer
-        with:
-          files: |
-            actions.js
+      - run: npm run act
