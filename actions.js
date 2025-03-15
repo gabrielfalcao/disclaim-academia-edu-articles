@@ -146,7 +146,7 @@ async function disclaim_academia_edu_article_authorship(url) {
   const articleUrl = new URL(url);
   const mentionId = articleUrl.searchParams.get("mention_id");
 
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   page.on("request", async (request) => {
     await logRequest(url, request);
