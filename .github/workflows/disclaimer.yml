@@ -18,6 +18,8 @@ jobs:
           node-version-file: '.nvmrc'
       - name: Disable AppArmor
         run: echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
+      - name: Install Dependencies
+        run: npm install
       - name: Install Browsers
         run: npm run install-browsers
       - name: Disclaim Articles
