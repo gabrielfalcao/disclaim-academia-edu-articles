@@ -16,4 +16,6 @@ jobs:
           node-version: 22.x
           cache: 'npm'
       - run: npm install
+      - name: Disable AppArmor
+        run: echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
       - run: npm run act
