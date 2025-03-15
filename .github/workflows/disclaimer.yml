@@ -19,7 +19,7 @@ jobs:
       - name: Run puppeteer
         uses: tj-actions/docker-run@v2
         with:
-          image: ghcr.io/puppeteer/puppeteer:21.3.8
+          image: ghcr.io/puppeteer/puppeteer:24.4.0
           name: puppeteer-chrome
           options: '-i --init --cap-add=SYS_ADMIN -v ${{ github.workspace }}:${{ github.workspace }}'
           args: |
