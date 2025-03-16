@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/puppeteer/puppeteer:24.4.0
+      options: "--privileged"
+
     steps:
       - run: env
       - name: Checkout
