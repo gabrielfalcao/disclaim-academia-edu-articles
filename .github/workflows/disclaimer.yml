@@ -15,8 +15,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - run: "apt update -y && apt install -y sudo"
-      - run: "chown -R pptruser ."
-      - run: echo 0 | tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
       - name: Disclaim academia.edu Articles
         run: sudo -u pptruser bash disclaim
+      - uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: logs

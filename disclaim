@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-set -x
-npm install
-node actions.js
+apt update -y && apt install -y sudo
+chown -R pptruser .
+echo 0 | tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
+sudo -u pptruser npm install
+sudo -u pptruser node actions.js
