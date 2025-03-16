@@ -10,10 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/puppeteer/puppeteer:24.4.0
-      options: "--privileged --user root"
+      options: "--privileged"
 
     steps:
-      - run: env
+      - name: "set permissions"
+        run: 'sudo chown -R $USER: .'
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install Dependencies
