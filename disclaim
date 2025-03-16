@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -x
+npm install
+node actions.js

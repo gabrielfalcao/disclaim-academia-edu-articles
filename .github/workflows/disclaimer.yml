@@ -15,8 +15,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - run: "apt update -y && apt install -y sudo"
       - run: "chown -R pptruser ."
-      - name: Install Dependencies
-        run: su -m pptruser 'npm install'
       - name: Disclaim academia.edu Articles
-        run: su -m pptruser 'node actions.js'
+        run: sudo -u pptruser bash disclaim
