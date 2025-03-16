@@ -16,13 +16,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Disclaim academia.edu Articles
-        run: sudo -u pptruser bash disclaim
-      - uses: actions/upload-artifact@v4
+        run: bash disclaim
+      - name: upload screenshot artifacts
+        uses: actions/upload-artifact@v4
         with:
           name: screenshots
           path: screenshots
 
-      - uses: actions/upload-artifact@v4
+      - name: upload log artifacts
+        uses: actions/upload-artifact@v4
         with:
           name: logs
           path: logs
