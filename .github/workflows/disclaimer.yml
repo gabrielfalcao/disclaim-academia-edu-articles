@@ -13,8 +13,8 @@ jobs:
       options: "--privileged"
 
     steps:
-      - name: "set permissions"
-        run: 'sudo chown -R $USER: .'
+      - run: whoami
+      - run: env
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install Dependencies
