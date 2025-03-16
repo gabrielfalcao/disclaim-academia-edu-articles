@@ -8,14 +8,12 @@ jobs:
   ubuntu:
     name: Puppeteer
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/puppeteer/puppeteer:24.4.0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Run puppeteer
-        uses: tj-actions/docker-run@v2
-        with:
-          image: ghcr.io/puppeteer/puppeteer:24.4.0
-          name: puppeteer-chrome
-          options: '-i --init --cap-add=SYS_ADMIN -v ${{ github.workspace }}:${{ github.workspace }}'
-          args: |
-            bash -c 'set -x;export PATH=$PATH:node_modules/.bin;cp -vf ${{ github.workspace }}/* /home/pptruser;npm install;node actions.js'
+      - name: Install Dependencies
+        run: npm install
+      - name: Disclaim academia.edu Articles
+        run: node actions.js
