@@ -11,6 +11,7 @@ jobs:
     container:
       image: ghcr.io/puppeteer/puppeteer:24.4.0
     steps:
+      - run: env
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install Dependencies
